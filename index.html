@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Space Max</title>
+    <link rel="stylesheet" type="text/css" href="index.css" />
+    <script src="node_modules/@keeex//qrcodejs-kx/qrcode.min.js"></script>
+</head>
+<body>
+    <div id="root">
+        <div id="is-not-mobile" style="display: none;">
+            <img src="assets/pc.svg" alt="PC" class="pc-image" />
+            <div class="warning">
+                <div>Unfortunately we support <strong>only</strong> mobile devices</div>
+                <div>Please use your Android/iPhone device</div>
+            </div>
+            <div class="qr"></div>
+        </div>
+        <div id="is-mobile" style="display: none;"></div>
+    </div>
+    <script src="bundle.js"></script>
+</body>
+</html>
