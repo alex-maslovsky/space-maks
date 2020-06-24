@@ -2,6 +2,10 @@ import isMobile from 'ismobilejs';
 import App from './src/app';
 import GyroService, { GYRO_ERRORS } from './src/services/gyro-service';
 
+if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/service-worker.js');
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     const { phone: isPhone } = isMobile(window.navigator);
 
