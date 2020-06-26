@@ -1,5 +1,4 @@
 import StarSprite from '../sprites/star-sprite';
-import GyroService from '../services/gyro-service';
 
 const STARS_AMOUNT = 1000;
 const MAX_Z = 2000;
@@ -12,7 +11,6 @@ const STAR_STRETCH = 1;
 export default class StarWrap {
     constructor(app) {
         this.cameraZ = 0;
-        this.gyro = { x: 1, y: 1, z: 1 };
 
         this.app = app;
 
@@ -20,12 +18,6 @@ export default class StarWrap {
         this.app.stage.addChild(...this.stars.map(({ sprite }) => sprite));
 
         this.app.ticker.add((delta) => this._onUpdate(delta));
-
-        GyroService.on(this._onGyro.bind(this));
-    }
-
-    _onGyro(state) {
-        this.gyro = state;
     }
 
     _onUpdate(delta) {

@@ -1,5 +1,6 @@
-import * as PIXI from 'pixi.js';
 import StarWrap from './components/star-wrap';
+import SpaceMax from './components/space-max';
+import loadAssetsPromise from './sprites';
 
 export default class App {
     constructor(container) {
@@ -16,7 +17,11 @@ export default class App {
     }
 
     _start() {
-        new StarWrap(this.app);
+        loadAssetsPromise
+            .then(() => {
+                new StarWrap(this.app);
+                new SpaceMax(this.app);
+            });
     }
 
     _onResize() {
