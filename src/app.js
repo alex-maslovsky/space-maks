@@ -7,6 +7,8 @@ export default class App {
         this.app = new PIXI.Application({
             width: window.innerWidth,
             height: window.innerHeight,
+            antialias: true,
+            preserveDrawingBuffer: true,
         });
 
         window.addEventListener('resize', this._onResize.bind(this));
