@@ -3,8 +3,8 @@ const CACHE_VERSION = 'v1';
 self.addEventListener('install', async event => {
     console.log('The service worker is being installed.');
 
-    const caches = await caches.open(CACHE_VERSION);
-    event.waitUntil(caches.addAll());
+    const cache = await caches.open(CACHE_VERSION);
+    event.waitUntil(cache.addAll());
 });
 
 self.addEventListener('fetch', (event) => {
