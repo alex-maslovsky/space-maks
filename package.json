@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "browserify & build_modules",
+    "build": "npm run browserify & npm run build_modules",
     "browserify": "browserify index.js -p esmify > bundle.js",
     "build_modules": "uglifyjs node_modules/@keeex//qrcodejs-kx/qrcode.min.js node_modules/pixi.js/dist/pixi.min.js node_modules/pixi-projection/dist/pixi-projection.js node_modules/pixi-filters/dist/pixi-filters.js node_modules/pixi-sound/dist/pixi-sound.js --compress -o vendors.js",
     "start": "watchify index.js -p esmify -o bundle.js -v"
