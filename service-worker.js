@@ -4,7 +4,7 @@ self.addEventListener('install', async event => {
     console.log('The service worker is being installed.');
 
     const cache = await caches.open(CACHE_VERSION);
-    event.waitUntil(cache.addAll());
+    event.waitUntil(cache.addAll(['*']));
 });
 
 self.addEventListener('fetch', (event) => {
