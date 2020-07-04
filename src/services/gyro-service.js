@@ -19,7 +19,7 @@ export default class GyroService {
         let accelerometer = null;
 
         try {
-            accelerometer = new Accelerometer({ referenceFrame: 'device' });
+            accelerometer = new Accelerometer({ referenceFrame: 'device', frequency: 60 });
             accelerometer.addEventListener('reading', () => callbacks.forEach((x) => x(accelerometer)));
             accelerometer.start();
 
